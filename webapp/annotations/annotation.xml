@@ -1,0 +1,122 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities" />
+    </edmx:Reference>
+
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+    </edmx:Reference>
+
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+    </edmx:Reference>
+
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication" />
+    </edmx:Reference>
+
+    <edmx:Reference Uri="/northwind/northwind.svc/$metadata">
+        <edmx:Include Namespace="NorthwindModel" />
+        <edmx:Include Namespace="ODataWeb.Northwind.Model" />
+    </edmx:Reference>
+
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <!-- >Operador de búsqueda en la entidad Customer</!-->
+            <Annotations Target="ODataWeb.Northwind.Model.NorthwindEntities/Customers">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record Type="Capabilities.FilterRestrictionsType">
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <!-- >Operador de búsqueda Contact Name</!-->
+                                <Record Type="Capabilities.FilterExpressionRestrictionType">
+                                    <PropertyValue Property="Property" PropertyPath="ContactName" />
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression" />
+                                </Record>
+                                <!-- >Operador de búsqueda Company Name</!-->
+                                <Record Type="Capabilities.FilterExpressionRestrictionType">
+                                    <PropertyValue Property="Property" PropertyPath="CompanyName" />
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+
+            <!-- >Nombre de las columnas en i18n</!-->
+            <Annotations Target="NorthwindModel.Customer/CustomerID">
+                <Annotation Term="Common.Label" String="{@i18n>customerId}" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Customer/CompanyName">
+                <Annotation Term="Common.Label" String="{@i18n>companyname}" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Customer/ContactName">
+                <Annotation Term="Common.Label" String="{@i18n>contactname}" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Customer/Country">
+                <Annotation Term="Common.Label" String="{@i18n>country}" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Customer/Region">
+                <Annotation Term="Common.Label" String="{@i18n>region}" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Customer/City">
+                <Annotation Term="Common.Label" String="{@i18n>city}" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Customer/Address">
+                <Annotation Term="Common.Label" String="{@i18n>address}" />
+            </Annotations>
+            <Annotations Target="NorthwindModel.Customer/PostalCode">
+                <Annotation Term="Common.Label" String="{@i18n>postalcode}" />
+            </Annotations>
+
+            <!-- >Entidad Customer</!-->
+            <Annotations Target="NorthwindModel.Customer">
+                <!-- >Header</!-->
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="TypeName" String="{@i18n>cliente}" />
+                        <PropertyValue Property="TypeNamePlural" String="{@i18n>clientes}" />
+                    </Record>
+                </Annotation>
+                <!-- >Campos de búsqueda</!-->
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>CompanyName</PropertyPath>
+                        <PropertyPath>ContactName</PropertyPath>
+                    </Collection>
+                </Annotation>
+
+                <!-- >Campos de la tabla</!-->
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerID" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyName" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ContactName" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Country" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Region" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="City" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Address" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PostalCode" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
