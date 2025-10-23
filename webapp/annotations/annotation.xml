@@ -38,6 +38,11 @@
                                     <PropertyValue Property="Property" PropertyPath="CompanyName" />
                                     <PropertyValue Property="AllowedExpressions" String="SearchExpression" />
                                 </Record>
+                                <!-- >Operador de búsqueda Country</!-->
+                                <Record Type="Capabilities.FilterExpressionRestrictionType">
+                                    <PropertyValue Property="Property" PropertyPath="Country" />
+                                    <PropertyValue Property="AllowedExpressions" String="SearchExpression" />
+                                </Record>
                             </Collection>
                         </PropertyValue>
                     </Record>
