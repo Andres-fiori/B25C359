@@ -1,0 +1,6 @@
+ID,bookCode,title,description,author,category_ID,language_code,publicationYear,rating,price,currency_code,stock_code
+9f16a8ac-0bf6-4ef7-8da8-0b4f3c4dad6c,BK001,The TypeScript Guide,A comprehensive guide to TypeScript,John Doe,0655fdd2-64f8-48da-a82a-a16970119f6e,EN,2022,4.5,29.99,USD,Available
+e1b81aae-dd5f-4e89-b076-7e042b7b0a2a,BK002,Mastering CAP,Deep dive into SAP CAP framework,Jane Smith,61532cb2-5023-4f46-825c-ced9cc5fa48e,EN,2023,4.8,39.99,USD,LowAvailability
+3e1659a7-8222-4f26-a88f-6bcb32b25058,BK003,Node.js Essentials,Everything about Node.js development,Alex Johnson,be0b488f-d388-4b5f-82d9-7c88c5332e14,EN,2021,4.3,25.5,USD,Available
+350958aa-de9b-4d47-b062-76e3ee10252a,BK004,AI and Machine Learning,Understanding AI concepts and models,Emma Brown,76e30c53-7e04-4036-b681-d9f0f8a66193,EN,2020,4.7,49.99,EUR,NotAvailable
+c1530380-3aec-41ae-84c6-173242e499a9,BK005,Cloud Computing Basics,Introduction to cloud technologies,Michael Lee,07d5223a-a78f-4cd5-9313-2a6f66952828,EN,2022,4.6,34.99,USD,Available

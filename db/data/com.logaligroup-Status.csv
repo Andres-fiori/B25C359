@@ -1,0 +1,4 @@
+code,criticality,name,descr
+Available,3,Available
+LowAvailability,2,Low Availability
+NotAvailable,1,Not Available

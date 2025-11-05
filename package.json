@@ -1,0 +1,30 @@
+{
+  "name": "mp",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "dependencies": {
+    "@cap-js/cds-types": "^0.15.0",
+    "@sap/cds": "^9.4.4",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2.0.4",
+    "@sap/dev-cap-tools": "^1.31.0",
+    "@ui5/cli": "^4.0.33",
+    "@ui5/server": "^4.0.8",
+    "cds-plugin-ui5": "^0.13.0",
+    "prettier": "3.6.2"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-cap": "cds watch --open books_cap_cds_annotations/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-xml": "cds watch --open books_xml_annotations/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/books_cap_cds_annotations",
+    "app/books_xml_annotations"
+  ],
+  "workspaces": [
+    "app/*"
+  ]
+}

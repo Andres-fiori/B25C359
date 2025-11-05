@@ -1,0 +1,21 @@
+code,name,descr,symbol,minorUnit
+USD,US Dollar,United States Dollar,$,2
+EUR,Euro,European Union Currency,€,2
+GBP,British Pound,United Kingdom Pound Sterling,£,2
+JPY,Japanese Yen,Currency of Japan,¥,0
+CNY,Chinese Yuan,Currency of China,¥,2
+INR,Indian Rupee,Currency of India,₹,2
+BRL,Brazilian Real,Currency of Brazil,R$,2
+CAD,Canadian Dollar,Currency of Canada,C$,2
+AUD,Australian Dollar,Currency of Australia,A$,2
+CHF,Swiss Franc,Currency of Switzerland,CHF,2
+RUB,Russian Ruble,Currency of Russia,₽,2
+KRW,South Korean Won,Currency of South Korea,₩,0
+MXN,Mexican Peso,Currency of Mexico,$,2
+SEK,Swedish Krona,Currency of Sweden,kr,2
+NOK,Norwegian Krone,Currency of Norway,kr,2
+DKK,Danish Krone,Currency of Denmark,kr,2
+ZAR,South African Rand,Currency of South Africa,R,2
+SGD,Singapore Dollar,Currency of Singapore,S$,2
+HKD,Hong Kong Dollar,Currency of Hong Kong,HK$,2
+NZD,New Zealand Dollar,Currency of New Zealand,NZ$,2
