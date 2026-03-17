@@ -1,0 +1,57 @@
+<core:FragmentDefinition
+    xmlns:unified="sap.ui.unified"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:macros="sap.fe.macros"
+>
+    <VBox
+        id="VBoxPlanningCalendar"
+        core:require="{ handler: 'legalguardians/ext/fragment/PlanningCalendar'}"
+    >
+        <SinglePlanningCalendar
+            id="calendar"
+            startHour="6"
+            endHour="18"
+            scaleFactor="0.5"
+            appointments="{toAppointments}"
+        >
+            <actions>
+                <Button
+                    id="create"
+                    text="{i18n>create}"
+                    tooltip="{i18n>create}"
+                    type="Emphasized"
+                    press=".extension.legalguardians.ext.controller.ObjectPage.onOpenPress"
+                    visible="{= ${IsActiveEntity} === true? false : true}"
+                    width="6rem"
+                />
+            </actions>
+            <views>
+                <SinglePlanningCalendarDayView
+                    id="day"
+                    key="day"
+                    title="{i18n>day}"
+                />
+                <SinglePlanningCalendarWeekView
+                    id="week"
+                    key="week"
+                    title="{i18n>week}"
+                />
+                <SinglePlanningCalendarMonthView
+                    id="month"
+                    key="month"
+                    title="{i18n>month}"
+                />
+            </views>
+            <appointments>
+                <unified:CalendarAppointment
+                    id="calendarAppoinment"
+                    title="{title}"
+                    description="{description}"
+                    startDate="{startDate}"
+                    endDate="{endDate2}"
+                />
+            </appointments>
+        </SinglePlanningCalendar>
+    </VBox>
+</core:FragmentDefinition>
