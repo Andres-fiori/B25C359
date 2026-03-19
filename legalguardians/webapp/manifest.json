@@ -59,7 +59,10 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.fe.templates": {}
+        "sap.fe.templates": {},
+        "sap.ui.layout": {},
+        "sap.ui.unified": {},
+        "sap.viz": {}
       }
     },
     "contentDensities": {
@@ -107,6 +110,11 @@
           "pattern": "LegalGuardiansSet({key})/toPatients({key2}):?query:",
           "name": "PatientsSetObjectPage",
           "target": "PatientsSetObjectPage"
+        },
+        {
+          "name": "LegalGuardiansSet_toPatients_toAppointmentsObjectPage",
+          "pattern": "LegalGuardiansSet(ID={key},IsActiveEntity={boolean})/toPatients(ID={key2},IsActiveEntity={boolean2})/toAppointments(ID={toAppointmentsKey},IsActiveEntity={boolean3}):?query:",
+          "target": "LegalGuardiansSet_toPatients_toAppointmentsObjectPage"
         }
       ],
       "targets": {
@@ -174,7 +182,25 @@
                     }
                   }
                 }
+              },
+              "navigation": {
+                "toAppointments": {
+                  "detail": {
+                    "route": "LegalGuardiansSet_toPatients_toAppointmentsObjectPage"
+                  }
+                }
               }
+            }
+          }
+        },
+        "LegalGuardiansSet_toPatients_toAppointmentsObjectPage": {
+          "type": "Component",
+          "id": "LegalGuardiansSet_toPatients_toAppointmentsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/LegalGuardiansSet/toPatients/toAppointments"
             }
           }
         }

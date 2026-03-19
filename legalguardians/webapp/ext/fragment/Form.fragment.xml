@@ -11,18 +11,17 @@
             <form:SimpleForm id="form">
                 <form:content>
                     <Label
-                        id="lPatientes"
-                        text="{i18n>patient}"
+                        id="lDoctor"
+                        text="Therapist"
                         required="true"
                     />
                     <ComboBox
-                        id="cbPatient"
-                        items="{/PatientsSet}"
-                        selectedKey="{form>/patient_ID}"
+                        id="cbDoctor"
+                        items="{/TherapistsSet}"
+                        selectedKey="{form>/doctor}"
                     >
                         <items>
                             <core:Item
-                                id="Item"
                                 key="{ID}"
                                 text="{fullName}"
                             />
@@ -37,7 +36,7 @@
                     <ComboBox
                         id="cbTypeAppointment"
                         items="{/VH_TypesAppointments}"
-                        selectedKey="{form>/typeAppointment_ID}"
+                        selectedKey="{form>/typeAppointment}"
                     >
                         <items>
                             <core:Item
@@ -48,7 +47,7 @@
                     </ComboBox>
 
                     <Label
-                        id="lTitel"
+                        id="lTitle"
                         text="{i18n>title}"
                         required="true"
                     />
@@ -60,7 +59,6 @@
                     <Label
                         id="lDescription"
                         text="{i18n>description}"
-                        required="true"
                     />
                     <TextArea
                         id="txaDescription"
@@ -76,19 +74,6 @@
                         id="dpBeginDate"
                         value="{form>/beginDate}"
                         valueFormat="yyyy-MM-dd"
-                        change="onChangeDate"
-                    />
-
-                    <Label
-                        id="lEndDate"
-                        text="{i18n>endDate}"
-                        required="true"
-                    />
-                    <DatePicker
-                        id="dpEndDate"
-                        value="{form>/endDate}"
-                        valueFormat="yyyy-MM-dd"
-                        enabled="false"
                     />
 
                     <Label
@@ -99,38 +84,17 @@
                     <ComboBox
                         id="cbBlock"
                         items="{/VH_Blocks}"
-                        selectedKey="{form>/block_ID}"
+                        selectedKey="{form>/block}"
                         showSecondaryValues="true"
-                        change="onChangeBlock"
                     >
-                        <core:ListItem
-                            key="{ID}"
-                            text="{block}"
-                            additionalText="{timeText}"
-                        />
+                        <items>
+                            <core:ListItem
+                                key="{ID}"
+                                text="{block}"
+                                additionalText="{timeText}"
+                            />
+                        </items>
                     </ComboBox>
-
-                    <Label
-                        id="lBeginTime"
-                        text="{i18n>beginTime}"
-                        required="true"
-                    />
-                    <Input
-                        id="ipBeginTime"
-                        value="{form>/beginTime}"
-                        enabled="false"
-                    />
-
-                    <Label
-                        id="lEndTime"
-                        text="{i18n>endTime}"
-                        required="true"
-                    />
-                    <Input
-                        id="ipEndTime"
-                        value="{form>/endTime}"
-                        enabled="false"
-                    />
                 </form:content>
             </form:SimpleForm>
         </content>

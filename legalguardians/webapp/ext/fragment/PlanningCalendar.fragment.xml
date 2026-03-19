@@ -2,18 +2,15 @@
     xmlns:unified="sap.ui.unified"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
-    xmlns:macros="sap.fe.macros"
 >
-    <VBox
-        id="VBoxPlanningCalendar"
-        core:require="{ handler: 'legalguardians/ext/fragment/PlanningCalendar'}"
-    >
+    <VBox id="VBoxPlanningCalendar">
         <SinglePlanningCalendar
             id="calendar"
             startHour="6"
             endHour="18"
             scaleFactor="0.5"
             appointments="{toAppointments}"
+            appointmentSelect=".extension.legalguardians.ext.controller.ObjectPage.onNavAppointmentSelect"
         >
             <actions>
                 <Button
@@ -22,10 +19,11 @@
                     tooltip="{i18n>create}"
                     type="Emphasized"
                     press=".extension.legalguardians.ext.controller.ObjectPage.onOpenPress"
-                    visible="{= ${IsActiveEntity} === true? false : true}"
+                    visible="{= ${IsActiveEntity} === true ? false : true}"
                     width="6rem"
                 />
             </actions>
+
             <views>
                 <SinglePlanningCalendarDayView
                     id="day"
@@ -43,10 +41,12 @@
                     title="{i18n>month}"
                 />
             </views>
+
             <appointments>
                 <unified:CalendarAppointment
-                    id="calendarAppoinment"
+                    id="calendarAppointment"
                     title="{title}"
+                    text="{status_code}"
                     description="{description}"
                     startDate="{startDate}"
                     endDate="{endDate2}"
